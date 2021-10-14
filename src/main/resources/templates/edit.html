@@ -1,0 +1,47 @@
+<html>
+<head th:replace="~{base :: head}"></head>
+	<body>
+		<div class="container">
+			<div class="card-fluid">
+				<h1>Café da Manhã MV</h1>
+			</div>
+		</div>
+		<div class="container">
+			<div class="card mb-4">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12 col-sm-12 col-md-8 mb-3">
+							<form class="card-body" action="/update" method="POST">
+								<div class="form-group">
+									<label for="nome">Nome:</label>
+									<input th:value="${breakfast.nome}">
+									<input class="form-control" name="nome"  placeholder="Digite aqui"/>
+									<small>Qual o seu nome?</small>
+								</div>
+								<div class="form-group mt-3">
+									<label for="cpf">CPF: <input th:value="${breakfast.cpf}"> </label>
+									<input class="form-control" name="cpf" placeholder="Digite aqui"/>
+									<small>Informe por favor o seu CPF.</small>
+								</div>
+								<div class="form-group mt-3">
+									<label for="item">Item: <input th:value="${breakfast.item}"> </label>
+									<input class="form-control" name="item" placeholder="Digite aqui"/>
+									<small>Informe por favor qual item levará para o café da manhã.</small>
+								</div>
+								<input type="hidden" name="id" th:value="${breakfast.id}">
+								<div class="mt-5">
+									<button type="submit" class="btn btn-primary btn-lg">Enviar!</button>
+								</div>
+							</form>
+						</div>
+						<div class="col-12 col-sm-12 col-md-4">
+							<div>
+								<img src="Marca_MV_oficial.jpg" class="img-fluid">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
