@@ -7,10 +7,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;
 
-import br.com.mv.breakfast.dto.RequestNewForm;
 import br.com.mv.breakfast.model.Breakfast;
 
 @Repository
@@ -19,6 +17,7 @@ public class BreakfastRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
+	@Transactional
 	public List<Breakfast> breakfastList() {
 		Query query = entityManager.
 				createNativeQuery("select * from breakfast", Breakfast.class);
@@ -26,6 +25,7 @@ public class BreakfastRepository {
 		return list;
 	}
 	
+	@Transactional
 	public Breakfast breakfastById(Long id) {
 		Query query = entityManager.
 				createNativeQuery("select * from breakfast where id = "+id+" ", Breakfast.class);
@@ -56,7 +56,7 @@ public class BreakfastRepository {
 
 	@Transactional
 	public Boolean deleteBreakfast(Breakfast breakfast) {
-		entityManager.createNativeQuery("delete from breakfast where id = "+breakfast.getId()+" ");
+		entityManager.createNativeQuery("delete from breakfast where id = "+breakfast.getId()+" ").executeUpdate();
 		return true;
 	}
 
