@@ -1,4 +1,4 @@
-package br.com.mv.breakfast.config;
+package br.com.mv.breakfast.dbconfig;
 
 import javax.sql.DataSource;
 
