@@ -22,17 +22,17 @@
 							<form class="card-body" action="/home" method="POST">
 								<div class="form-group">
 									<label for="nome">Nome:</label>
-									<input class="form-control" name="nome"	placeholder="qual o seu nome?" />
-									<small>Qual o seu nome?</small>
+									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="nome"	placeholder="qual o seu nome?" required/>
+									<small>Informe por favor o seu nome.</small>
 								</div>
 								<div class="form-group mt-3">
 									<label for="cpf">CPF:</label>
-									<input class="form-control" name="cpf" placeholder="qual o seu cpf?" />
+									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="cpf" placeholder="qual o seu cpf? Ex: 000.000.000-00" maxlength="14" required/>
 									<small>Informe por favor o seu CPF.</small>
 								</div>
-								<div class="form-group mt-3">
+								<div class="form-group mt-3 ">
 									<label for="item">Item:</label> 
-									<input class="form-control" name="item"	placeholder="o que levará para o café da manhã?" />
+									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="item"	placeholder="o que levará para o café da manhã?" required/>
 									<small>Informe por favor qual item levará para o café da manhã.</small>
 								</div>
 								<div class="mt-5">
