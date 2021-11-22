@@ -41,8 +41,8 @@ public class HomeController {
 	@PostMapping("/home")
 	public String saveBreakfastForm(RequestNewForm requestNewForm) throws Exception {
 		Breakfast breakfast = requestNewForm.toBreakfast();
-		br.	savedBreakfast(breakfast);
-		return "home";
+		br.savedBreakfast(breakfast);
+		return "redirect:/breakfastList";
 	}
 	
 	@RequestMapping("/update")

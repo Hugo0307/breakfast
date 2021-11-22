@@ -17,6 +17,7 @@ public class BreakfastRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
+	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<Breakfast> breakfastList() {
 		Query query = entityManager.

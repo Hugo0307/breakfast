@@ -5,7 +5,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../js/jquery.mask.min.js"></script>
 	<style type="text/css">
 		.card img{
 			width: 100%;
@@ -41,5 +42,25 @@
 		.container .card .card-header{
 			text-shadow: 0.1em 0.1em 0.2em rgb(84, 715, 221);
 		}
+		#cancelar {
+			position: relative;
+			top: 4px;
+			padding: 0.65rem 1rem;
+		    font-size: 1.25rem;
+		    border-radius: 0.4rem;
+		    text-decoration: none;
+		}
 	</style>
 </head>
+
+<div th:fragment="headerDaPagina" class="container">
+	<div class="card-fluid">
+		<h1>Café da Manhã</h1>
+	</div>
+</div>
+
+<div th:fragment="imagemChef" class="col-12 col-sm-12 col-md-4">
+	<div>
+		<img src="chef.jpg" class="img-fluid">
+	</div>
+</div>

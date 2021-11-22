@@ -1,11 +1,7 @@
 <html>
 <head th:replace="~{base :: head}"></head>
 	<body>
-		<div class="container">
-			<div class="card-fluid">
-				<h1>Café da Manhã</h1>
-			</div>
-		</div>
+		<div th:replace="~{base :: headerDaPagina}"></div>
 		<div class="container">
 			<div class="card mb-4">
 				<div class="card-header">
@@ -27,7 +23,7 @@
 								</div>
 								<div class="form-group mt-3">
 									<label for="cpf">CPF:</label>
-									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="cpf" placeholder="qual o seu cpf? Ex: 000.000.000-00" maxlength="14" required/>
+									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="cpf" placeholder="Digite somente números" onkeypress="$(this).mask('000.000.000-00')" required/>
 									<small>Informe por favor o seu CPF.</small>
 								</div>
 								<div class="form-group mt-3 ">
@@ -40,11 +36,7 @@
 								</div>
 							</form>
 						</div>
-						<div class="col-12 col-sm-12 col-md-4">
-							<div>
-								<img src="chef.jpg" class="img-fluid">
-							</div>
-						</div>
+						<div th:replace="~{base :: imagemChef}"></div>
 					</div>
 				</div>
 			</div>

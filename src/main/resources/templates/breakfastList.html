@@ -1,11 +1,7 @@
 <html>
 <head th:replace="~{base :: head}"></head>
 <body>
-	<div class="container">
-		<div class="card-fluid">
-			<h1>Café da Manhã</h1>
-		</div>
-	</div>
+	<div th:replace="~{base :: headerDaPagina}"></div>
 	<div class="container">
 		<div class="card text-left fw-bold text-dark">
 			<form class="card-body">
@@ -33,7 +29,7 @@
 					<div class="row ">
 						<div class="col-1">
 						<div class="form-group">
-							<input type="checkbox" name="id" th:value="${obj.id}">
+							<input type="radio" name="id" th:value="${obj.id}" required>
 						</div>
 						</div>
 						<div class="col">

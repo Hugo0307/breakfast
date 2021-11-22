@@ -1,11 +1,7 @@
 <html>
 <head th:replace="~{base :: head}"></head>
 	<body>
-		<div class="container">
-			<div class="card-fluid">
-				<h1>Café da Manhã MV</h1>
-			</div>
-		</div>
+		<div th:replace="~{base :: headerDaPagina}"></div>
 		<div class="container">
 			<div class="card mb-4">
 				<div class="card-body">
@@ -14,31 +10,27 @@
 							<form class="card-body" action="/update" method="POST">
 								<div class="form-group">
 									<label for="nome">Nome:</label>
-									<input th:value="${breakfast.nome}" disabled="disabled">
-									<input class="form-control" name="nome"  placeholder="Digite aqui novo nome"/>
-									<small>Qual o seu nome?</small>
+									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="nome"  th:value="${breakfast.nome}"/>
+									<small>Informe por favor o nome.</small>
 								</div>
 								<div class="form-group mt-3">
-									<label for="cpf">CPF: <input th:value="${breakfast.cpf}" disabled="disabled"> </label>
-									<input class="form-control" name="cpf" placeholder="Digite aqui novo cpf"/>
-									<small>Informe por favor o seu CPF.</small>
+									<label for="cpf">CPF:</label>
+									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="cpf" th:value="${breakfast.cpf}" onkeypress="$(this).mask('000.000.000-00')"/>
+									<small>Informe por favor o CPF.</small>
 								</div>
 								<div class="form-group mt-3">
-									<label for="item">Item: <input th:value="${breakfast.item}" disabled="disabled"> </label>
-									<input class="form-control" name="item" placeholder="Digite aqui novo item"/>
+									<label for="item">Item:</label>
+									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="item" th:value="${breakfast.item}"/>
 									<small>Informe por favor qual item levará para o café da manhã.</small>
 								</div>
 								<input type="hidden" name="id" th:value="${breakfast.id}">
 								<div class="mt-5">
-									<button type="submit" class="btn btn-primary btn-lg">Enviar!</button>
+									<a id="cancelar" class="bg-primary text-white" href="/breakfastList">Cancelar</a>
+									<button type="submit" class="btn btn-primary btn-lg">Atualizar</button>
 								</div>
 							</form>
 						</div>
-						<div class="col-12 col-sm-12 col-md-4">
-							<div>
-								<img src="chef.jpg" class="img-fluid">
-							</div>
-						</div>
+						<div th:replace="~{base :: imagemChef}"></div>
 					</div>
 				</div>
 			</div>
