@@ -4,7 +4,7 @@
 		<div th:replace="~{base :: headerDaPagina}"></div>
 		<div class="container">
 			<div class="card mb-4">
-				<div class="card-header">
+				<div class="card-header" id="menu">
 					<ul class="nav nav-tabs card-header-tabs">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="true" href="/home">O que você vai trazer?</a></li>
@@ -15,21 +15,24 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-8 mb-3">
-							<form class="card-body" action="/home" method="POST">
+							<form th:object="${requestNewForm}" class="card-body" action="/insert" method="POST">
 								<div class="form-group">
 									<label for="nome">Nome:</label>
-									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="nome"	placeholder="qual o seu nome?" required/>
+									<input th:field="*{nome}" th:errorclass="is-invalid" class="form-control shadow p-2 mb-3 bg-body rounded" placeholder="qual o seu nome?" />
 									<small>Informe por favor o seu nome.</small>
+									<div class="invalid-feedback" th:errors="*{nome}"></div>	
 								</div>
 								<div class="form-group mt-3">
 									<label for="cpf">CPF:</label>
-									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="cpf" placeholder="Digite somente números" onkeypress="$(this).mask('000.000.000-00')" required/>
+									<input th:field="*{cpf}" th:errorclass="is-invalid" class="form-control shadow p-2 mb-3 bg-body rounded" placeholder="Digite somente números" onkeypress="$(this).mask('000.000.000-00')"/>
 									<small>Informe por favor o seu CPF.</small>
+									<div class="invalid-feedback" th:errors="*{cpf}"></div>
 								</div>
 								<div class="form-group mt-3 ">
 									<label for="item">Item:</label> 
-									<input class="form-control shadow p-2 mb-3 bg-body rounded" name="item"	placeholder="o que levará para o café da manhã?" required/>
+									<input th:field="*{item}" th:errorclass="is-invalid" class="form-control shadow p-2 mb-3 bg-body rounded"	placeholder="o que levará para o café da manhã?"/>
 									<small>Informe por favor qual item levará para o café da manhã.</small>
+									<div class="invalid-feedback" th:errors="*{item}"></div>
 								</div>
 								<div class="mt-5">
 									<button type="submit" class="btn btn-primary btn-lg">Eu vou!</button>

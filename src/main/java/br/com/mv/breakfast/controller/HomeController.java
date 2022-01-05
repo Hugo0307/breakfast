@@ -1,8 +1,11 @@
 package br.com.mv.breakfast.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +23,7 @@ public class HomeController {
 	private BreakfastRepository br;
 	
 	@GetMapping("/home")
-	public String home() {
+	public String home(RequestNewForm requestNewForm) {
 		return "home";
 	}
 	
@@ -38,11 +41,15 @@ public class HomeController {
 		return "edit";
 	}
 	
-	@PostMapping("/home")
-	public String saveBreakfastForm(RequestNewForm requestNewForm) throws Exception {
-		Breakfast breakfast = requestNewForm.toBreakfast();
-		br.savedBreakfast(breakfast);
-		return "redirect:/breakfastList";
+	@PostMapping("/insert")
+	public String saveBreakfastForm(@Valid RequestNewForm requestNewForm, BindingResult result) throws Exception {
+		if(result.hasErrors()) {
+			return "home";
+		} else {
+			Breakfast breakfast = requestNewForm.toBreakfast();
+			br.savedBreakfast(breakfast);
+			return "redirect:/breakfastList";
+		}
 	}
 	
 	@RequestMapping("/update")
