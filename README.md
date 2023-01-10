@@ -9,3 +9,6 @@
 **Obrigado pela visita!**
 
 **Link para acesso na nuvem:** *https://my-breakfast.herokuapp.com/home*
+
+____________
+  EDIT: Em 10/01/2023: Devido à remoção de banco de dados gratuitos no Heroku, a aplicação não está mais funcionando na nuvem.
