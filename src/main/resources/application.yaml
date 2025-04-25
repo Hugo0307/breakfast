@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: "@project.name@"
+  profiles:
+    active: ${PROFILE_APP}
+  #Connection DB
+  datasource:
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+    driver-class-name: ${DATASOURCE_DRIVE_NAME}
+  jpa:
+    database-platform: ${DATABASE_PLATFORM}
