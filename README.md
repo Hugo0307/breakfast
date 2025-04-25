@@ -12,3 +12,5 @@
 
 ____________
   EDIT: Em 10/01/2023: Devido à remoção de banco de dados gratuitos no Heroku, a aplicação não está mais funcionando na nuvem.
+
+  EDIT 2: Em 25/04/2025: Já não é mais possível utilizar CPF FAKE. A aplicação realiza a validação de CPF.
