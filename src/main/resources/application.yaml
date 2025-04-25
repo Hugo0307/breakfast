@@ -11,3 +11,5 @@ spring:
     driver-class-name: ${DATASOURCE_DRIVE_NAME}
   jpa:
     database-platform: ${DATABASE_PLATFORM}
+    show-sql: ${SHOW_SQL:false}
+    generate-ddl: true
