@@ -1,6 +1,6 @@
 package br.com.mv.breakfast.dto;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.br.CPF;
 
